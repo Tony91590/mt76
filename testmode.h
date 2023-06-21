@@ -7,7 +7,10 @@
 
 #define MT76_TM_TIMEOUT	10
 
+#include <linux/version.h>
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5,17,0)
 #include <net/netlink.h>
+#endif
 
 /**
  * enum mt76_testmode_attr - testmode attributes inside NL80211_ATTR_TESTDATA
