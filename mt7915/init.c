@@ -281,7 +281,7 @@ static void mt7915_led_set_brightness(struct led_classdev *led_cdev,
 void mt7915_init_txpower(struct mt7915_dev *dev,
 			 struct ieee80211_supported_band *sband)
 {
-	int i, n_chains = hweight8(dev->mphy.antenna_mask);
+	int i, n_chains = hweight16(dev->mphy.chainmask);
 	int nss_delta = mt76_tx_power_nss_delta(n_chains);
 	int pwr_delta = mt7915_eeprom_get_power_delta(dev, sband->band);
 	struct mt76_power_limits limits;
